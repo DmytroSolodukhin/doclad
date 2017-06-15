@@ -53,12 +53,12 @@ var sun_geometry = new THREE.SphereGeometry(sun_r,30,30),//размер,долг
 //    sun = new THREE.Mesh( sun_geometry, sun_mater );
 //    scene.add(sun);
 
-    loader = new THREE.TextureLoader();
-    loader.load( 'images/sun.png', function ( texture ) {
-        var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
-        sun = new THREE.Mesh( sun_geometry, material );
-        scene.add(sun);
-    } );
+loader = new THREE.TextureLoader();
+loader.load( 'images/sun.png', function ( texture ) {
+    var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+    sun = new THREE.Mesh( sun_geometry, material );
+    scene.add(sun);
+} );
 
 //земля
 
@@ -205,7 +205,7 @@ var starsGeometry = new THREE.Geometry(),
         size:1,
         sizeAttenuation:false
     });
-    for(var i=0;i<45000;i++){
+    for(var i = 0; i<45000; i++){
         var vertex = new THREE.Vector3();
         vertex.x = Math.random()*2-1;
         vertex.y = Math.random()*2-1;
@@ -233,7 +233,7 @@ scene.add(light);
  */
 var controls = new THREE.FlyControls(camera);
 controls.movementSpeed = 3000;
-controls.rollSpeed = Math.PI / 14;
+controls.rollSpeed = Math.PI / 19;
 controls.autoForward = false;
 controls.dragToLook = false;
 
